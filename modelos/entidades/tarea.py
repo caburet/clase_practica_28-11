@@ -36,10 +36,12 @@ class Tarea:
             raise ValueError(f'La descripción debe ser de tipo string y no estar vacía')
         if not isinstance(completada, bool):
             raise ValueError(f'El campo completada debe ser de tipo booleano')
-        if id is not None and not isinstance(id, int) or id < 0:
-            raise ValueError(f'El id debe ser un entero positivo')
-        if fecha_creacion is not None and not isinstance(fecha_creacion, str) or fecha_creacion == "":
-            raise ValueError(f'La fecha de creación debe ser un string y no estar vacía')
+        if id is not None:
+            if not isinstance(id, int) or id < 0:
+                raise ValueError(f'El id debe ser un entero positivo')
+        if fecha_creacion is not None:
+            if not isinstance(fecha_creacion, str) or fecha_creacion == "":
+                raise ValueError(f'La fecha de creación debe ser un string y no estar vacía')
         
         self.__titulo = titulo
         self.__descripcion = descripcion
@@ -53,7 +55,7 @@ class Tarea:
         if fecha_creacion is not None:
             self.__fecha_creacion = fecha_creacion
         else:
-            self.__fecha_creacion = datetime.strptime(datetime.now(), '%Y-%m-%d')
+            self.__fecha_creacion = "28/11/2024"
     
     def establecer_titulo(self, titulo:str):
         if not isinstance(titulo, str) or titulo == "" or titulo.isspace():

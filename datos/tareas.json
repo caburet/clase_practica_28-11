@@ -1,0 +1,12 @@
+{
+    "ultimo_id": 2,
+    "tareas": [
+        {
+            "id": 2,
+            "titulo": "joel3",
+            "descripcion": "123456",
+            "completada": false,
+            "fecha_creacion": "28/11/2024"
+        }
+    ]
+}

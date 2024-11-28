@@ -61,6 +61,8 @@ class RepositorioTareas:
         if not self.existeTarea(tarea.obtener_titulo()):
             self.__tareas.append(tarea)
             self.__guardarDatos()
+        else:
+            raise ValueError(f'La tarea ya existe con el título: {tarea.obtener_titulo()}')
     
     def actualizar(self, id: int, dicc: dict):
         if not isinstance(dicc, dict):
